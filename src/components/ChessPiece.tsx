@@ -2,10 +2,6 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import { ItemTypes } from '../constants/Types'
 
-
-/**
- * Your Component
- */
 export default function ChessPiece() {
 
     const [{isDragging}, drag] =
@@ -25,15 +21,13 @@ export default function ChessPiece() {
             <img
                 ref={drag}
                 style={{
-                     opacity: isDragging ? .1 : 1,
-                     cursor: 'auto',
-                    transform: `translate(0,0)`
+                     opacity: isDragging ? .5 : 1,
+                     cursor: 'move',
+                     transform: `translate(0,0)`
                 }}
                 src={'pieces/b_bishop.png'}
             />
         </div>
-
-
     )
 
 }
