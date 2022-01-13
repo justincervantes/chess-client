@@ -1,20 +1,19 @@
-import React, {ReactChild} from 'react'
-import {DropTargetMonitor, useDrop} from 'react-dnd'
+import React from 'react'
+import {useDrop} from 'react-dnd'
 import { ItemTypes } from '../constants/Types'
 
-
-/**
- * Your Component
- */
 export default function BoardSquare(props: {x: number, y: number, children?: React.ReactNode}) {
 
-    const move = (x :number,y : number) => {
+    const move = (x :number,y : number, item: any, monitor: any) => {
+        console.log(props.children)
         console.log(`Dropped at x: ${x}, y: ${y}`)
+        console.log(item)
+        console.log(monitor)
    }
 
-    const [{ isOver, highlighted, hovered }, drop] = useDrop(() => ({
+    const [collectedProps, drop] = useDrop(() => ({
         accept: ItemTypes.PIECE,
-        drop: () => move(props.x, props.y),
+        drop: (item, monitor) => console.log(item),
         collect: monitor => ({
             highlighted: monitor.canDrop(),
             hovered: monitor.isOver(),
@@ -27,7 +26,7 @@ export default function BoardSquare(props: {x: number, y: number, children?: Rea
     const hoverClasses = 'h-full w-full z-10 opacity-50 bg-yellow-100'
     return (
         <div className={classes + color} ref={drop}>
-            <div className={isOver ? hoverClasses : '' }>
+            <div className={collectedProps.isOver ? hoverClasses : '' }>
                 {props.children}
             </div>
         </div>
