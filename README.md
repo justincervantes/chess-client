@@ -1,3 +1,6 @@
+# Note on design
+Originally I wanted to use functional programming to move child components around to different parent components (pieces and squares) instead of using state management and re-rendering of the board on each move. I quickly realized that memo and portals were not what I had originally thought they were, and were not suitable for this and what I was doing was likely against the spirit of React. There is an open source project which hacks React to enable re-parenting  (https://dev.to/paolimi/reparenting-is-now-possible-with-react-3ci0) however it is unstable. I am going back to state and re-rendering of the game board.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
