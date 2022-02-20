@@ -18,15 +18,14 @@ export default function ChessBoard() {
             <h1 className={'text-center'}>Active Player: {activePlayer}</h1>
             <div className={"flex h-screen"}>
                 <div className={"m-auto"}>
-                    {Board.map((arr, y) => {
-                        return (<div className="flex" key={y}>
-                            {arr.map((arr, x) => {
+                    {Board.map((arr, x) => {
+                        return (<div className="flex" key={x}>
+                            {arr.map((arr, y) => {
                                 const boardPiece = Board[x][y]
                                 return (
                                     <BoardSquare x={x} y={y} key={x + '-' + y} >
                                         {/* If there is a piece with currentLocation matching x, y, render it */}
-                                        { boardPiece ? <ChessPiece id={boardPiece?.id} ></ChessPiece> : null }
-
+                                        { boardPiece !== null ? <ChessPiece id={'0'}  piece={boardPiece.title}></ChessPiece> : null }
                                     </BoardSquare>
                                 )}
                             )}

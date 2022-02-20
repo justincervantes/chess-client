@@ -32,7 +32,7 @@ export default function ChessPiece(props: {piece: string, id: string}) {
                      cursor: 'move',
                      transform: `translate(0,0)`
                 }}
-                src={'pieces/b_bishop.png'}
+                src={`pieces/${piece}.png`}
             />
         </div>
     )
