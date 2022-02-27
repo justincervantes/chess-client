@@ -15,7 +15,10 @@ export default function ChessPiece(props: {piece: string, id: string}) {
             () => (
                 {
                     type: ItemTypes.PIECE,
-                    id,
+                    item: {
+                        id,
+                        piece
+                    },
                     collect: monitor => ({
                         isDragging: monitor.isDragging(),
                     }),
