@@ -1,10 +1,10 @@
-import {Piece} from "./Piece";
-import {PlayerColors} from "../constants/PlayerColors";
+import { Piece } from './Piece';
+import { PlayerColors } from '../constants/PlayerColors';
 
-export class Bishop extends Piece{
+export class Bishop extends Piece {
 
-    constructor(title: string, x: number, y: number, id: number) {
-        super(title, x, y, id);
+    constructor(color: 'b' | 'w', x: number, y: number) {
+        super('bishop', color, x, y);
     }
 
     checkValidMove(x: number, y: number): boolean {

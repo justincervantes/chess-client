@@ -1,8 +1,9 @@
-import {Piece} from "./Piece";
-export class Queen extends Piece{
+import { Piece } from './Piece';
 
-    constructor(title: string, x: number, y: number, id: number) {
-        super(title, x, y, id);
+export class Queen extends Piece {
+
+    constructor(color: 'b' | 'w', x: number, y: number) {
+        super('queen', color, x, y);
     }
 
     checkValidMove(x: number, y: number): boolean {

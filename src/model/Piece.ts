@@ -1,17 +1,19 @@
 export abstract class Piece {
 
-    title: string;
+    color: 'b' | 'w';
     x: number;
     y: number;
-    id: number;
+    type: string;
+    descriptor: string;
 
-    protected constructor(title: string, x: number, y: number, id : number) {
-        this.title = title;
+    protected constructor(type: string, color: 'b' | 'w', x: number, y: number) {
+        this.color = color;
         this.x = x;
         this.y = y;
-        this.id = id;
+        this.type = type;
+        this.descriptor = `${color}_${type}`;
     }
 
-    abstract checkValidMove(x:number, y:number) : boolean;
+    abstract checkValidMove(x: number, y: number): boolean;
 
 }

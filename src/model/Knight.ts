@@ -1,9 +1,9 @@
-import {Piece} from "./Piece";
+import { Piece } from './Piece';
 
-export class Knight extends Piece{
+export class Knight extends Piece {
 
-    constructor(title: string, x: number, y: number, id: number) {
-        super(title, x, y, id);
+    constructor(color: 'b' | 'w', x: number, y: number) {
+        super('knight', color, x, y);
     }
 
     checkValidMove(x: number, y: number): boolean {

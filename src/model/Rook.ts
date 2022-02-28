@@ -1,9 +1,9 @@
-import {Piece} from "./Piece";
+import { Piece } from './Piece';
 
-export class Rook extends Piece{
+export class Rook extends Piece {
 
-    constructor(title: string, x: number, y: number, id: number) {
-        super(title, x, y, id);
+    constructor(color: 'b' | 'w', x: number, y: number) {
+        super('rook', color, x, y);
     }
 
     checkValidMove(x: number, y: number): boolean {

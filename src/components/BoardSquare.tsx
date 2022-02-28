@@ -2,24 +2,25 @@ import React, { useContext } from 'react';
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from '../constants/Types';
 import { GameContext } from '../context/game-context';
-import { Pawn } from '../model/Pawn';
 
 export default function BoardSquare(props: { x: number, y: number, children?: React.ReactNode }) {
     const context = useContext(GameContext);
-    const move = (x: number, y: number, item: any) => {
+    const move = (x: number, y: number, draggedPiece: any) => {
+        const fromX = draggedPiece.id.split('-')[0];
+        const fromY = draggedPiece.id.split('-')[1];
+        if (x == fromX && y == fromY) return;
         const tempGameState = [...context.gameState];
-        console.log('old gamestate', tempGameState);
-        const fromX = item.id.split('-')[0];
-        const fromY = item.id.split('-')[1];
+        tempGameState[y][x] = tempGameState[fromY][fromX];
+        tempGameState[y][x]!.x = x;
+        tempGameState[y][x]!.y = y;
         tempGameState[fromY][fromX] = null;
-        tempGameState[y][x] = new Pawn('w_pawn', 3, 3, 1);
         context.setGameState(tempGameState);
     };
 
 
     const [collectedProps, drop] = useDrop(() => ({
         accept: ItemTypes.PIECE,
-        drop: (item, monitor) => move(props.x, props.y, item),
+        drop: (draggedPiece, monitor) => move(props.x, props.y, draggedPiece),
         collect: monitor => ({
             highlighted: monitor.canDrop(),
             hovered: monitor.isOver(),

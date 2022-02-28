@@ -18,7 +18,7 @@ export default function ChessBoard() {
 
     return (
       <GameContext.Provider value={value}>
-          <DndProvider backend={HTML5Backend}>
+          <DndProvider debugMode={true} backend={HTML5Backend}>
               <h1 className={'text-center'}>Active Player: {activePlayer}</h1>
               <div className={'flex h-screen'}>
                   <div className={'m-auto'}>
@@ -31,7 +31,7 @@ export default function ChessBoard() {
                                           <BoardSquare x={x} y={y} key={x + '-' + y}>
                                               {/* If there is a piece with currentLocation matching x, y, render it */}
                                               {boardPiece !== null ? <ChessPiece id={`${x}-${y}`}
-                                                                                 piece={boardPiece.title}></ChessPiece> : null}
+                                                                                 piece={boardPiece.descriptor}></ChessPiece> : null}
                                           </BoardSquare>
                                         );
                                     }
