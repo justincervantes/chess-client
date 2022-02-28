@@ -1,5 +1,4 @@
 import { Knight } from '../model/Knight';
-import { Piece } from '../model/Piece';
 import { Rook } from '../model/Rook';
 import { Pawn } from '../model/Pawn';
 import { Bishop } from '../model/Bishop';
