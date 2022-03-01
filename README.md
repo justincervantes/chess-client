@@ -3,7 +3,7 @@
 - [x] Draw a board
 - [x] Add chess pieces to the board
 - [x] Add drag and drop
-- [ ] Add valid move logic 
+- [ ] Add valid move logic (includes en puissant, excludes castling)
 - [ ] Add validation for when King might be in check
 - [ ] Add castling functionality
 - [ ] Add a second initial game state where the player is black
