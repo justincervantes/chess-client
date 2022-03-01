@@ -13,8 +13,9 @@
 
 # Assumptions and Assertions
 
-- The board is always facing the current user, and there is no view switching (you can't flip the board to see what your opponent sees). This enables rule checking to be consistent.
+- The board is always facing the current user, and there is no view switching (you can't flip the board to see what your opponent sees). 
 - You don't need to handle rule checking the opponent's moves, assume that everyone is a good actor as this isn't a ranked system with matchmaking. 
+- There is no free chess play, which enables you to move white then black. This has been done to save time when generating the rules, and will be a task for a later iteration if this project is still fun.
 
 # Instructions to Run
 
