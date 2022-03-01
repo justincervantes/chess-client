@@ -10,6 +10,11 @@
 - [ ] Add socket.io to enable chat based communication and movement communication
 - [ ] Add a timer
 
+# Assumptions and Assertions
+
+- The board is always facing the current user, and there is no view switching (you can't flip the board to see what your opponent sees). This enables rule checking to be consistent.
+- You don't need to handle rule checking the opponent's moves, assume that everyone is a good actor as this isn't a ranked system with matchmaking. 
+
 # Instructions to Run
 
 This project was built using create-react-app --template typescript
