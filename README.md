@@ -6,6 +6,7 @@
 - [ ] Add valid move logic (includes en puissant, excludes castling)
 - [ ] Add validation for when King might be in check
 - [ ] Add castling functionality
+- [ ] Add stalemate check
 - [ ] Add a second initial game state where the player is black
 - [ ] Add socket.io to enable chat based communication and movement communication
 - [ ] Add a timer
